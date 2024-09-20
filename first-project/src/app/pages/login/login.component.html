@@ -1,1 +1,13 @@
-<p>login works!</p>
+<main>
+    <form>
+        <h1>Login</h1>
+        <app-input-text name="username" placeholder="Username" />
+        <app-input-text name="password" placeholder="Password" />
+        <app-submit-form value="Confirm" />
+    </form>
+
+    <div *ngFor="let user of users">
+        <p>{{ user.username }}</p>
+        <p>{{ user.password }}</p>
+    </div>
+</main>

@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputTextComponent {
   @Input() name: string = '';
-  @Input() placeholder: String = '';
+  @Input() placeholder: string = '';
 }

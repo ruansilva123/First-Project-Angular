@@ -1,24 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { InputTextComponent } from '../../shared/input-text/input-text.component';
-import { SubmitFormComponent } from '../../shared/submit-form/submit-form.component';
-import { DummyJsonService } from '../../services/login/dummy-json.service';
-import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [InputTextComponent, SubmitFormComponent, CommonModule],
+  imports: [],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
-  users: any[] = [];
-
-  constructor(private dummyService: DummyJsonService) {}
-
-  ngOnInit() {
-    this.dummyService.getUsers().subscribe(data => {
-      this.users = data.products; 
-    });
-  }
+// Use the login service to call the backend login function.
+export class LoginComponent{
+  
 }

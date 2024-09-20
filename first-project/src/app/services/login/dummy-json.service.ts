@@ -1,19 +1,29 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { first, map } from 'rxjs';
 
 
+// Do the request to backend.
 @Injectable({
   providedIn: 'root'
 })
-export class DummyJsonService {
-  private apiUrlLogin = 'https://dummyjson.com/users'
+export class LoginService {
+  _http = inject(HttpClient);
+  apiUrlLogin = 'https://dummyjson.com/users';
 
-
-  constructor(private http: HttpClient) { }
-
-
-  getUsers(): Observable<any>{
-    return this.http.get(this.apiUrlLogin);
-  } 
+  login(username: string, password: string){
+    return this._http.post(this.apiUrlLogin,{
+      username: username,
+      password: password
+    }).pipe(
+      map((resp: any)=>{
+        return {
+          email: resp.email,
+          firstName: resp.firstName,
+          lastName: resp.lastName,
+          image: resp.image
+        }
+      })
+    )
+  }
 }

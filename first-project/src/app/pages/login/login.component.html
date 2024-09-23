@@ -1,8 +1,13 @@
 <main>
-    <form>
+    <form [formGroup]="form">
         <h1>Login</h1>
-        <app-input-text name="username" placeholder="Username" />
+        <!-- <app-input-text name="username" placeholder="Username" />
         <app-input-text name="password" placeholder="Password" />
-        <app-submit-form value="Confirm" />
+        <app-submit-form value="Confirm" /> -->
+        <input type="text" name="username" [formControl]="form.controls.username">
+        <input type="text" name="password" [formControl]="form.controls.password">
+        <input type="submit" value="Confirm" (click)="logar()">
     </form>
+
+    <!-- <img [src]="response?.image" alt=""> -->
 </main>

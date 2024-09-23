@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { first, map } from 'rxjs';
+import { map } from 'rxjs';
 
 
 // Do the request to backend.
@@ -9,7 +9,7 @@ import { first, map } from 'rxjs';
 })
 export class LoginService {
   _http = inject(HttpClient);
-  apiUrlLogin = 'https://dummyjson.com/users';
+  apiUrlLogin = 'https://dummyjson.com/auth/login';
 
   login(username: string, password: string){
     return this._http.post(this.apiUrlLogin,{

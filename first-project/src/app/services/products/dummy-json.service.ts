@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, Inject, inject } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs';
 import { ProductsResponse } from '../../interfaces/products-response';
 
@@ -13,6 +13,6 @@ export class DummyJsonService {
   apiUrlProducts = 'https://dummyjson.com/products';
 
   returnAllProducts() {
-    return this._http.get<ProductsResponse>(this.apiUrlProducts).pipe(map((resp => resp.products)));
+    return this._http.get<ProductsResponse>(this.apiUrlProducts).pipe(map(resp => resp.products));
   }
 }

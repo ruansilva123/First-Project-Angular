@@ -1,0 +1,15 @@
+<p>about works!</p>
+
+<div *ngIf="weathers.length > 0; else noWeathers">
+    <div *ngFor="let weather of weathers">
+        <div *ngIf="currentDate == weather.time">
+            <p>{{ weather.time }}</p>
+            <p>{{ weather.temperatureMax }}</p>
+            <p>{{ weather.temperatureMin }}</p>
+        </div>
+    </div>
+</div>
+
+<ng-template #noWeathers>
+    <p>Nenhum dado de tempo encontrado.</p>
+</ng-template>

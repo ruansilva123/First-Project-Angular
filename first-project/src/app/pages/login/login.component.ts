@@ -3,12 +3,14 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/dummy-json.service';
 import { LoginResponse } from '../../interfaces/login-response';
 import { Router } from '@angular/router';
+import { SubmitFormComponent } from '../../shared/submit-form/submit-form.component';
+import { InputTextComponent } from '../../shared/input-text/input-text.component';
 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, SubmitFormComponent, InputTextComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

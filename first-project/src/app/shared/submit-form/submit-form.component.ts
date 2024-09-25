@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-submit-form',
   standalone: true,
@@ -8,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './submit-form.component.css'
 })
 export class SubmitFormComponent {
-  @Input() value: String = '';
+  @Input() value: string = '';
 }
